@@ -23,6 +23,7 @@ public class WordCreator : MonoBehaviour {
 		Color.white
 	};
 	public float timer,timenow;
+	public List<WordTracker> Palavras = new List<WordTracker> ();
 	// Use this for initialization
 	void Start () {
 		timenow = timer;
@@ -53,7 +54,6 @@ public class WordCreator : MonoBehaviour {
 		if (LastWord != null) {
 			Bounds b = LastWord.GetComponent<BoxCollider> ().bounds;
 			PositionToSpawn = new Vector3 (PositionToSpawn.x - Vector3.Distance(PositionToSpawn,LastWord.transform.position) - b.extents.x * 3,PositionToSpawn.y,PositionToSpawn.z);
-			Debug.Log (b.extents);
 		}
 		GameObject instancia = (GameObject)Instantiate (prefabWord, PositionToSpawn, Quaternion.identity);
 
@@ -67,6 +67,9 @@ public class WordCreator : MonoBehaviour {
 		instancia.AddComponent<Rigidbody> ().constraints = RigidbodyConstraints.FreezeAll;
 		instancia.GetComponent<Rigidbody> ().useGravity = false;
 		instancia.GetComponent<TextMesh> ().color = cores [Random.Range (0, cores.Length)];
+		Palavras.Add (instancia.AddComponent<WordTracker> ());
+		instancia.GetComponent<WordTracker> ().damage = 10;
+		instancia.GetComponent<WordTracker> ().m_word = instancia.GetComponent<TextMesh> ().text;
 		LastWord = instancia;
 	}
 	
