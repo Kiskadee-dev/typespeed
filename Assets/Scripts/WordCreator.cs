@@ -53,7 +53,7 @@ public class WordCreator : MonoBehaviour {
 		playArea [1] = PlayableAreaY2;
 		playArea [2] = PlayableAreaY3;
 
-		GameObject Limite = (GameObject)Instantiate (prefabLimite, new Vector3 (camborder.x + 25, -4, 0), Quaternion.identity);
+		Instantiate (prefabLimite, new Vector3 (camborder.x + 25, -4, 0), Quaternion.identity);
 
 		for (int i = 0; i < 20; i++) {
 			AddNewJob (GetRandomWord ());
