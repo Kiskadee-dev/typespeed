@@ -83,10 +83,10 @@ public class GameManager : MonoBehaviour {
 			PlayerPrefs.SetInt ("Vidas", Vidas);
 			StartCoroutine(SwitchLevel (1, 4));
 		} else {
-			Vidas = 3;
-			Nivel = 0;
-			PlayerPrefs.SetInt ("Vidas", Vidas);
-			PlayerPrefs.SetInt ("Nivel", Nivel);
+			//Vidas = 3;
+			//Nivel = 0;
+			//PlayerPrefs.SetInt ("Vidas", Vidas);
+			//PlayerPrefs.SetInt ("Nivel", Nivel);
 			StartCoroutine(SwitchLevel (2, 4));
 
 		}
