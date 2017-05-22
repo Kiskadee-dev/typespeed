@@ -3,9 +3,9 @@
 	<Portuguese>
 	<string name="app_name">Múltiplas Linguagens com Unity</string>
 	<string name="description">Este script provine suporte para múltiplas linguagens de modo conveniente</string>
-	<string name="dicionario1">snake.Boipeva.Cágado.Camaleão.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
+	<string name="dicionario1">cobra.Boipeva.Cágado.Camaleão.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
 	<string name="dicionario2">Adeus.Alegoria.Amanhecer.Amor.Amigo.Aprender.Arte.Caminhos.Bibliofilia.Cintilante.Cronista.Esperança.Fulgor.Heráldico.justiça.paz</string>
-	<string name="dicionario3">Raio.Risos.sonho.veneta.prazer.paz.fado.felicidade.desafio.arte</string>
+	<string name="dicionario3">Raio.Risos.sonho.veneta.prazer.paz.fado.feliz.desafio.arte</string>
 	<string name = "title">TypeSpeed</string>
 	<string name = "menustartgame">Iniciar novo jogo</string>
 	<string name = "menuloadgame">Carregar jogo salvo</string>
@@ -22,14 +22,15 @@
 	<string name = "gameoverbuttonmenu">Voltar para o menu</string>
 	<string name = "gameovertryagain">Tentar o mesmo nivel novamente</string>
 	<string name = "sessionscore">Pontos da sessão: </string>
+	<string name = "globalranking">Classificação global</string>
 	</Portuguese>
 
 	<English>
 	<string name="app_name">Multiple Languages with Unity</string>
 	<string name="description">Este script provine suporte para múltiplas linguagens de modo conveniente</string>
-	<string name="dicionario1">Snake.Boipeva.Cágaleão.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
+	<string name="dicionario1">Snake.Boipeva.Turtle.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
 	<string name="dicionario2">Goodbye.Alegory.Love.friend.learn.Art.ways.books.Sparkling.chronicler.hope.Glow.Heraldic.justice.peace</string>
-	<string name="dicionario3">lightning.laughs.dream.Venetian.pleasure.peace.fado.happiness.challenge.art</string>
+	<string name="dicionario3">light.laughs.dream.Venetian.please.peace.fado.happy.danger.art</string>
 	<string name = "title">TypeSpeed</string>
 	<string name = "menustartgame">Start new game</string>
 	<string name = "menuloadgame">Load game</string>
@@ -46,7 +47,7 @@
 	<string name = "gameoverbuttonmenu">Back to menu</string>
 	<string name = "gameovertryagain">Try the same level again</string>
 	<string name = "sessionscore">Session score: </string>
-
+	<string name = "globalranking">Ranking</string>
 	</English>
 	
 </languages>
