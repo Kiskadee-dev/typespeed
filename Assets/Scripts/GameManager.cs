@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour {
 		//m_WordCreator.AddNewJob ("Level Increased");
 		Nivel++;
 		PlayerPrefs.SetInt ("Nivel", Nivel);
+		SessionScore session = GameObject.Find ("sessionScoreInstance").GetComponent<SessionScore> ();
+		session.score += type.score;
 		StartCoroutine(SwitchLevel (1, 4));
 
 	}

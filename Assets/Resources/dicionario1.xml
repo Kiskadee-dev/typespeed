@@ -21,6 +21,7 @@
 	<string name = "gameoversubtitle">Você perdeu muitas palavras!</string>
 	<string name = "gameoverbuttonmenu">Voltar para o menu</string>
 	<string name = "gameovertryagain">Tentar o mesmo nivel novamente</string>
+	<string name = "sessionscore">Pontos da sessão: </string>
 	</Portuguese>
 
 	<English>
@@ -44,6 +45,8 @@
 	<string name = "gameoversubtitle">You missed too many words!</string>
 	<string name = "gameoverbuttonmenu">Back to menu</string>
 	<string name = "gameovertryagain">Try the same level again</string>
+	<string name = "sessionscore">Session score: </string>
+
 	</English>
 	
 </languages>
