@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+	<Portuguese>
+	<string name="app_name">Múltiplas Linguagens com Unity</string>
+	<string name="description">Este script provine suporte para múltiplas linguagens de modo conveniente</string>
+	<string name="dicionario1">snake.Boipeva.Cágado.Camaleão.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
+	<string name="dicionario2">Adeus.Alegoria.Amanhecer.Amor.Amigo.Aprender.Arte.Caminhos.Bibliofilia.Cintilante.Cronista.Esperança.Fulgor.Heráldico.justiça.paz</string>
+	<string name="dicionario3">Raio.Risos.sonho.veneta.prazer.paz.fado.felicidade.desafio.arte</string>
+	<string name = "title">TypeSpeed</string>
+	<string name = "menustartgame">Iniciar novo jogo</string>
+	<string name = "menuloadgame">Carregar jogo salvo</string>
+	<string name = "score">Pontos: </string>
+	<string name = "remainingwords">Palavras Restantes: </string>
+	<string name = "health">Energia: </string>
+	<string name = "level">Nivel: </string>
+	<string name = "inputfield">Escreva aqui</string>
+	<string name = "paused">Pausado!</string>
+	<string name = "pausebutton1">Reiniciar Nivel</string>
+	<string name = "pausebutton2">Voltar ao menu inicial</string>
+	<string name = "gameovertitle">Fim de jogo</string>
+	<string name = "gameoversubtitle">Você perdeu muitas palavras!</string>
+	<string name = "gameoverbuttonmenu">Voltar para o menu</string>
+	<string name = "gameovertryagain">Tentar o mesmo nivel novamente</string>
+	</Portuguese>
+
+	<English>
+	<string name="app_name">Multiple Languages with Unity</string>
+	<string name="description">Este script provine suporte para múltiplas linguagens de modo conveniente</string>
+	<string name="dicionario1">Snake.Boipeva.Cágaleão.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
+	<string name="dicionario2">Goodbye.Alegory.Love.friend.learn.Art.ways.books.Sparkling.chronicler.hope.Glow.Heraldic.justice.peace</string>
+	<string name="dicionario3">lightning.laughs.dream.Venetian.pleasure.peace.fado.happiness.challenge.art</string>
+	<string name = "title">TypeSpeed</string>
+	<string name = "menustartgame">Start new game</string>
+	<string name = "menuloadgame">Load game</string>
+	<string name = "score">Score: </string>
+	<string name = "remainingwords">Remaining words: </string>
+	<string name = "health">Energy: </string>
+	<string name = "level">Level: </string>
+	<string name = "inputfield">Type here</string>
+	<string name = "paused">Paused!</string>
+	<string name = "pausebutton1">Restart Level</string>
+	<string name = "pausebutton2">Back to main menu</string>
+	<string name = "gameovertitle">Game Over</string>
+	<string name = "gameoversubtitle">You missed too many words!</string>
+	<string name = "gameoverbuttonmenu">Back to menu</string>
+	<string name = "gameovertryagain">Try the same level again</string>
+	</English>
+	
+</languages>

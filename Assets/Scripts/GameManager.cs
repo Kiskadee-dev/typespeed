@@ -15,7 +15,10 @@ public class GameManager : MonoBehaviour {
 	public GameObject ui_Paused;
 	public bool DEBUG;
 	public bool DoPause;
+	public LanguageManager LM;
+	public string nivelt;
 	void Awake(){
+		LM = GameObject.Find ("LanguageManager").GetComponent<LanguageManager> ();
 		if (DEBUG) {
 			PlayerPrefs.DeleteAll();
 		}
@@ -31,7 +34,9 @@ public class GameManager : MonoBehaviour {
 		}
 
 		for (int i = 0; i < Nivel; i++) {
-			Velocidade += 10;
+			if (i != 0) {
+				Velocidade += 2;
+			}
 		}
 
 		m_WordCreator.OverallSpeedBasedOnLevel = Velocidade;
@@ -39,13 +44,15 @@ public class GameManager : MonoBehaviour {
 
 
 	void Start () {
-		ui_Level.text = "Level: 0";
+		nivelt = LM.GetString ("level");
+
+		ui_Level.text = nivelt + "0";
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		ui_Level.text = "Nivel: "+Nivel.ToString ();
+		ui_Level.text = nivelt+Nivel.ToString ();
 		if (!halt) {
 			if (m_WordCreator.GameStarted) {
 				if (m_WordCreator.PalavrasRestantes == 0) {

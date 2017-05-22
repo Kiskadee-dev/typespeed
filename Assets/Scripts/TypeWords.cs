@@ -10,9 +10,19 @@ public class TypeWords : MonoBehaviour {
 	public WordCreator m_wordcreator;
 	public int score;
 	public bool DoActive = true;
+	public LanguageManager LM;
+	public string health;
+	public string pontos;
+	public string palavrasRestantes;
 	// Use this for initialization
+	void Awake(){
+		LM = GameObject.Find ("LanguageManager").GetComponent<LanguageManager> ();
+		health = LM.GetString ("health");
+		pontos = LM.GetString ("score");
+		palavrasRestantes = LM.GetString ("remainingwords");
+	}
 	void Start () {
-		ui_Score.text = "Score: 0";
+		//ui_Score.text = "Score: 0";
 		if (DoActive) {
 			UserWrote.ActivateInputField ();
 			UserWrote.Select ();
@@ -21,13 +31,13 @@ public class TypeWords : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		ui_PalavrasRestantes.text = "Palavras Restantes: " + m_wordcreator.PalavrasRestantes.ToString ();
-		ui_Health.text = "Health: " + m_wordcreator.Health.ToString();
+		ui_PalavrasRestantes.text = palavrasRestantes + m_wordcreator.PalavrasRestantes.ToString ();
+		ui_Health.text =  health + m_wordcreator.Health.ToString();
 	}
 
 	public void SeekAndDestroy(){
 		if (DoActive) {
-			string cache = UserWrote.text;
+			string cache = UserWrote.text.ToLower();
 			//copy list
 			List<WordTracker> WordTracker = new List<WordTracker> ();
 			WordTracker.AddRange (m_wordcreator.Palavras);
@@ -45,7 +55,7 @@ public class TypeWords : MonoBehaviour {
 				UserWrote.ActivateInputField ();
 				UserWrote.Select ();
 			}
-			ui_Score.text = "Score: " + score.ToString ();
+			ui_Score.text = pontos + score.ToString ();
 		}
 	}
 	int DestroyWord(List<GameObject> words){

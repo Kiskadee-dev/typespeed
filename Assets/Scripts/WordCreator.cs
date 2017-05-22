@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Xml;
 public class WordCreator : MonoBehaviour {
 	[Header("Prefabs")]
 	public GameObject prefabWord;
 	public GameObject prefabLimite;
 	[Header("Dicionario de palavras")]
-	private string dicionario = "Hello World.Python.Escada.Computador.Android.Jogo.pen drive.Terminal.Edge.Windows.Linux.Ubuntu.horizonte.abrueba.calango.tequila.tekila.mexico.eua.baranga.cacatua";
+	private string dicionario;
 	private Vector3 camborder;
 	private int PlayableAreaY1,PlayableAreaY2,PlayableAreaY3;
 	public Queue<string> LevelRemaining = new Queue<string>();
@@ -42,26 +42,75 @@ public class WordCreator : MonoBehaviour {
 	GameObject WordsHolder;
 	// Use this for initialization
 	void Start () {
-		WordsHolder = (GameObject)Instantiate (prefabWord, this.transform.position, Quaternion.identity);
-		WordsHolder.name = "WordsHolder";
-		timenow = timer;
-		camborder = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, 0));
-		PlayableAreaY1 = (int)camborder.y - 60;
-		PlayableAreaY2 = (int)camborder.y - 120;
-		PlayableAreaY3 = (int)camborder.y - PlayableAreaY2 - 50;
-		playArea[0] = PlayableAreaY1;
-		playArea [1] = PlayableAreaY2;
-		playArea [2] = PlayableAreaY3;
-
-		Instantiate (prefabLimite, new Vector3 (camborder.x + 25, -4, 0), Quaternion.identity);
-
-		for (int i = 0; i < 20; i++) {
-			AddNewJob (GetRandomWord ());
-			PalavrasRestantes++;
+		string currentLanguage = Application.systemLanguage.ToString ();
+		if (currentLanguage == "Portuguese") {
+		} else {
+			currentLanguage = "English";
 		}
-		GameStarted = true;
+		if (PlayerPrefs.HasKey ("Nivel")) {
+			int nivel = PlayerPrefs.GetInt ("Nivel");
+			if (nivel < 5) {
+				LangC lang = new LangC ();
+				if (Application.systemLanguage.ToString () == "Portuguese") {
+					dicionario = makedictionary (lang, currentLanguage, "dicionario1", "dicionario1");
+				} 
+			} else {
+				if (nivel < 10) {
+					LangC lang = new LangC ();
+					if (Application.systemLanguage.ToString () == "Portuguese") {
+						dicionario = makedictionary (lang, currentLanguage, "dicionario2", "dicionario1");
+					}
+				} else {
+					if (nivel < 20) {
+						LangC lang = new LangC ();
+						if (Application.systemLanguage.ToString () == "Portuguese") {
+							dicionario = makedictionary (lang, currentLanguage, "dicionario3", "dicionario1");
+						} 
+					} else {
+						if (nivel >= 20) {
+							LangC lang = new LangC ();
+							if (Application.systemLanguage.ToString () == "Portuguese") {
+								dicionario = makedictionary (lang, currentLanguage, "dicionario3", "dicionario1");
+							} 
+						}
+					}
+			
+				}
+			}
+			WordsHolder = (GameObject)Instantiate (prefabWord, this.transform.position, Quaternion.identity);
+			WordsHolder.name = "WordsHolder";
+			timenow = timer;
+			camborder = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width, Screen.height, 0));
+			PlayableAreaY1 = (int)camborder.y - 60;
+			PlayableAreaY2 = (int)camborder.y - 120;
+			PlayableAreaY3 = (int)camborder.y - PlayableAreaY2 - 50;
+			playArea [0] = PlayableAreaY1;
+			playArea [1] = PlayableAreaY2;
+			playArea [2] = PlayableAreaY3;
 
+			Instantiate (prefabLimite, new Vector3 (camborder.x + 25, -4, 0), Quaternion.identity);
+
+			for (int i = 0; i < 20; i++) {
+				AddNewJob (GetRandomWord ());
+				PalavrasRestantes++;
+			}
+			GameStarted = true;
+		}
 	}
+	public string makedictionary(LangC lang,string idioma,string nome,string nomeArquivo){
+		XmlDocument xml = new XmlDocument ();
+		TextAsset text = Resources.Load ("dicionario1") as TextAsset;
+		if (text != null) {
+			xml.LoadXml (text.text);
+			lang.LangDirect (xml, idioma);
+			return lang.GetString (nome);
+		} else {
+			return ".error";
+		}
+	}
+
+
+
 	public void AddNewJob(string word){
 		LevelRemaining.Enqueue (word);
 	}
@@ -79,7 +128,7 @@ public class WordCreator : MonoBehaviour {
 		GameObject instancia = (GameObject)Instantiate (prefabWord, PositionToSpawn, Quaternion.identity);
 
 		instancia.AddComponent<Move> ().speed = speed;
-		instancia.AddComponent<TextMesh> ().text = word;
+		instancia.AddComponent<TextMesh> ().text = word.ToLower();
 		instancia.GetComponent<TextMesh> ().characterSize = 8;
 		instancia.GetComponent<TextMesh> ().anchor = TextAnchor.MiddleCenter;
 		instancia.GetComponent<TextMesh> ().alignment = TextAlignment.Center;
