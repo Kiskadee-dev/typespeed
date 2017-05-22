@@ -16,6 +16,7 @@ public class LoadNewGame : MonoBehaviour {
 	public void uiLoadNewGame(){
 		PlayerPrefs.SetInt ("Nivel", 0);
 		PlayerPrefs.SetInt ("Vidas", 3);
+		PlayerPrefs.SetString ("data", "empty.");
 		SessionScore score = GameObject.Find ("sessionScoreInstance").GetComponent<SessionScore> ();
 		score.score = 0;
 		SceneManager.LoadScene (1);

@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour {
 		PlayerPrefs.SetInt ("Nivel", Nivel);
 		SessionScore session = GameObject.Find ("sessionScoreInstance").GetComponent<SessionScore> ();
 		session.score += type.score;
+		PlayerPrefs.SetInt ("sessionscore", (int)session.score);
 		StartCoroutine(SwitchLevel (1, 4));
 
 	}
