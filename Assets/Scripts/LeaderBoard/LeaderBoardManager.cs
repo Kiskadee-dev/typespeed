@@ -11,12 +11,6 @@ public class LeaderBoardManager : MonoBehaviour
 	#region DEFAULT_UNITY_CALLBACKS
 	void Start ()
 	{
-		PlayGamesClientConfiguration config = new 
-		PlayGamesClientConfiguration.Builder ()
-			.EnableSavedGames()
-			.Build();
-
-
 		// recommended for debugging:
 		PlayGamesPlatform.DebugLogEnabled = true;
 
