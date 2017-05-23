@@ -21,15 +21,15 @@ public class GameManager : MonoBehaviour {
 	void Awake(){
 		LM = GameObject.Find ("LanguageManager").GetComponent<LanguageManager> ();
 		if (DEBUG) {
-			PlayerPrefs.DeleteAll();
+			ZPlayerPrefs.DeleteAll();
 		}
 		Velocidade = 10;
-		if (PlayerPrefs.HasKey ("Vidas") && PlayerPrefs.HasKey("Nivel")) {
-			Vidas = PlayerPrefs.GetInt ("Vidas");
-			Nivel = PlayerPrefs.GetInt ("Nivel");
+		if (ZPlayerPrefs.HasKey ("Vidas") && ZPlayerPrefs.HasKey("Nivel")) {
+			Vidas = ZPlayerPrefs.GetInt ("Vidas");
+			Nivel = ZPlayerPrefs.GetInt ("Nivel");
 		} else {
-			PlayerPrefs.SetInt ("Vidas", 3);
-			PlayerPrefs.SetInt ("Nivel", 0);
+			ZPlayerPrefs.SetInt ("Vidas", 3);
+			ZPlayerPrefs.SetInt ("Nivel", 0);
 			Vidas = 3;
 			Nivel = 0;
 		}
@@ -81,10 +81,10 @@ public class GameManager : MonoBehaviour {
 		//m_WordCreator.LevelRemaining.Clear ();
 		//m_WordCreator.AddNewJob ("Level Increased");
 		Nivel++;
-		PlayerPrefs.SetInt ("Nivel", Nivel);
+		ZPlayerPrefs.SetInt ("Nivel", Nivel);
 		SessionScore session = GameObject.Find ("sessionScoreInstance").GetComponent<SessionScore> ();
 		session.score += type.score;
-		PlayerPrefs.SetInt ("sessionscore", (int)session.score);
+		ZPlayerPrefs.SetInt ("sessionscore", (int)session.score);
 		GPGSconquistas.ConquestTyperBorn ((int)session.score);
 		if (Nivel >= 10) {
 			GPGSconquistas.ConquestTyperSpeedster ((int)session.score);
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour {
 	void Perde(){
 		if (Vidas > 0) {
 			Vidas--;
-			PlayerPrefs.SetInt ("Vidas", Vidas);
+			ZPlayerPrefs.SetInt ("Vidas", Vidas);
 			StartCoroutine(SwitchLevel (1, 4));
 		} else {
 			//Vidas = 3;
