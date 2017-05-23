@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 	public bool DoPause;
 	public LanguageManager LM;
 	public string nivelt;
+	public conquistas GPGSconquistas;
 	void Awake(){
 		LM = GameObject.Find ("LanguageManager").GetComponent<LanguageManager> ();
 		if (DEBUG) {
@@ -84,6 +85,17 @@ public class GameManager : MonoBehaviour {
 		SessionScore session = GameObject.Find ("sessionScoreInstance").GetComponent<SessionScore> ();
 		session.score += type.score;
 		PlayerPrefs.SetInt ("sessionscore", (int)session.score);
+		GPGSconquistas.ConquestTyperBorn ((int)session.score);
+		if (Nivel >= 10) {
+			GPGSconquistas.ConquestTyperSpeedster ((int)session.score);
+			if (Nivel >= 15) {
+				GPGSconquistas.ConquestTyperGood ((int)session.score);
+				if (Nivel >= 20) {
+					GPGSconquistas.ConquestTyperProfessional ((int)session.score);
+				}
+			}
+		}
+		GPGSconquistas.UpdateGlobalRanking ((int)session.score);
 		StartCoroutine(SwitchLevel (1, 4));
 
 	}
