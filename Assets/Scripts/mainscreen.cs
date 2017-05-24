@@ -31,7 +31,6 @@ public class mainscreen : MonoBehaviour {
 		}
 	}
 	IEnumerator waitsome(){
-		yield return new WaitForSeconds (3);
 		if (hook1 != null && hook2 != null) {
 			if (PlayGamesPlatform.Instance.localUser.authenticated) {
 				hook1.interactable = true;
@@ -43,5 +42,6 @@ public class mainscreen : MonoBehaviour {
 		} else {
 			Debug.Log ("Not authenticated, cant show");
 		}
+		yield break;
 	}
 }
