@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 public class GameManager : MonoBehaviour {
 	//Esta instância do GameManager não é persistente e só verifica a condição de vitória e atribui dificuldade;
 	public int Vidas;
@@ -27,11 +28,17 @@ public class GameManager : MonoBehaviour {
 		if (ZPlayerPrefs.HasKey ("Vidas") && ZPlayerPrefs.HasKey("Nivel")) {
 			Vidas = ZPlayerPrefs.GetInt ("Vidas");
 			Nivel = ZPlayerPrefs.GetInt ("Nivel");
+			Analytics.CustomEvent ("NivelDinamico:",new Dictionary<string,object>{
+				{"Nivel: ",Nivel}
+			});		
 		} else {
 			ZPlayerPrefs.SetInt ("Vidas", 3);
 			ZPlayerPrefs.SetInt ("Nivel", 0);
 			Vidas = 3;
 			Nivel = 0;
+			Analytics.CustomEvent ("NivelDinamico:",new Dictionary<string,object>{
+				{"Nivel: ",Nivel}
+			});		
 		}
 
 		for (int i = 0; i < Nivel; i++) {
