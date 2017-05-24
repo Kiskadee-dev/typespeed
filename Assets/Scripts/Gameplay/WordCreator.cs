@@ -47,8 +47,8 @@ public class WordCreator : MonoBehaviour {
 		} else {
 			currentLanguage = "English";
 		}
-		if (PlayerPrefs.HasKey ("Nivel")) {
-			int nivel = PlayerPrefs.GetInt ("Nivel");
+		if (ZPlayerPrefs.HasKey ("Nivel")) {
+			int nivel = ZPlayerPrefs.GetInt ("Nivel");
 			if (nivel < 5) {
 				LangC lang = new LangC ();
 				if (Application.systemLanguage.ToString () == "Portuguese") {
