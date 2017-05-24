@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour {
 	}
 	void Perde(){
 		if (Vidas > 0) {
-			Vidas--;
+			//Vidas--; //Sem game over.
 			ZPlayerPrefs.SetInt ("Vidas", Vidas);
 			StartCoroutine(SwitchLevel (1, 4));
 		} else {
