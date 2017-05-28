@@ -28,17 +28,14 @@ public class GameManager : MonoBehaviour {
 		if (ZPlayerPrefs.HasKey ("Vidas") && ZPlayerPrefs.HasKey("Nivel")) {
 			Vidas = ZPlayerPrefs.GetInt ("Vidas");
 			Nivel = ZPlayerPrefs.GetInt ("Nivel");
-			Analytics.CustomEvent ("NivelDinamico:",new Dictionary<string,object>{
-				{"Nivel: ",Nivel}
-			});		
-		} else {
+
+			}		
+		else {
 			ZPlayerPrefs.SetInt ("Vidas", 3);
 			ZPlayerPrefs.SetInt ("Nivel", 0);
 			Vidas = 3;
 			Nivel = 0;
-			Analytics.CustomEvent ("NivelDinamico:",new Dictionary<string,object>{
-				{"Nivel: ",Nivel}
-			});		
+						
 		}
 
 		for (int i = 0; i < Nivel; i++) {
@@ -56,8 +53,12 @@ public class GameManager : MonoBehaviour {
 
 		ui_Level.text = nivelt + "0";
 
+		Analytics.CustomEvent ("Jogando");
+		Analytics.CustomEvent ("NivelDinamico:", new Dictionary<string,object> {
+			{ "Nivel: ",Nivel }
+
+		});
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		ui_Level.text = nivelt+Nivel.ToString ();
@@ -88,6 +89,10 @@ public class GameManager : MonoBehaviour {
 		//m_WordCreator.LevelRemaining.Clear ();
 		//m_WordCreator.AddNewJob ("Level Increased");
 		Nivel++;
+		Analytics.CustomEvent ("Leveled up:", new Dictionary<string,object> {
+			{ "Nivel: ",Nivel }
+
+		});
 		ZPlayerPrefs.SetInt ("Nivel", Nivel);
 		SessionScore session = GameObject.Find ("sessionScoreInstance").GetComponent<SessionScore> ();
 		session.score += type.score;

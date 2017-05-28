@@ -58,19 +58,19 @@ public class WordCreator : MonoBehaviour {
 				if (nivel < 10) {
 					LangC lang = new LangC ();
 					if (Application.systemLanguage.ToString () == "Portuguese") {
-						dicionario = makedictionary (lang, currentLanguage, "dicionario2", "dicionario1");
+						dicionario = (makedictionary (lang, currentLanguage, "dicionario2", "dicionario1") +"."+makedictionary(lang,currentLanguage,"dicionario1","dicionario1"));
 					}
 				} else {
 					if (nivel < 20) {
 						LangC lang = new LangC ();
 						if (Application.systemLanguage.ToString () == "Portuguese") {
-							dicionario = makedictionary (lang, currentLanguage, "dicionario3", "dicionario1");
+							dicionario = (makedictionary (lang, currentLanguage, "dicionario3", "dicionario1") +"."+ makedictionary(lang,currentLanguage,"dicionario1","dicionario1")+"."+makedictionary(lang,currentLanguage,"dicionario2","dicionario1"));
 						} 
 					} else {
 						if (nivel >= 20) {
 							LangC lang = new LangC ();
 							if (Application.systemLanguage.ToString () == "Portuguese") {
-								dicionario = makedictionary (lang, currentLanguage, "dicionario3", "dicionario1");
+								dicionario = (makedictionary (lang, currentLanguage, "dicionario3", "dicionario1"));
 							} 
 						}
 					}

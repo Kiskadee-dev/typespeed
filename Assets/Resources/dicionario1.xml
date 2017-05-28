@@ -3,7 +3,7 @@
 	<Portuguese>
 	<string name="app_name">Múltiplas Linguagens com Unity</string>
 	<string name="description">Este script provine suporte para múltiplas linguagens de modo conveniente</string>
-	<string name="dicionario1">cobra.Boipeva.Cágado.Camaleão.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
+	<string name="dicionario1">Allium.Alpinea.Amarilis.Anemona.Angélica.Antúrio.Astromélia.Bouvardia.Celósia.Centáurea.Cerejeira.Cravina.Cravo.Crisantemo.Delfim.Eremurus.Dendron.Escabiosa.Esporinha.Estaticia.Estrelícia.Falaenopolis.Flox</string>
 	<string name="dicionario2">Adeus.Alegoria.Amanhecer.Amor.Amigo.Aprender.Arte.Caminhos.Bibliofilia.Cintilante.Cronista.Esperança.Fulgor.Heráldico.justiça.paz</string>
 	<string name="dicionario3">Raio.Risos.sonho.veneta.prazer.paz.fado.feliz.desafio.arte</string>
 	<string name = "title">TypeSpeed</string>
@@ -29,7 +29,7 @@
 	<English>
 	<string name="app_name">Multiple Languages with Unity</string>
 	<string name="description">Este script provine suporte para múltiplas linguagens de modo conveniente</string>
-	<string name="dicionario1">Snake.Boipeva.Turtle.Caninana.Cascavel.Dormideira.Jararaca.Urutu</string>
+	<string name="dicionario1">Allium.Alpinea.Amaryllis.Anemone.Angelica.Anthurium.Astromelia.Bouvardia.Celestine.Centaurea.cherry.Cravina.Clove.Chrysanthemum.Delfim.Eremurus.Dendron.Scabious.Esporinha.Estaticia.Estrelicia.Falaenopolis.Flox.</string>
 	<string name="dicionario2">Goodbye.Alegory.Love.friend.learn.Art.ways.books.Sparkling.chronicler.hope.Glow.Heraldic.justice.peace</string>
 	<string name="dicionario3">light.laughs.dream.Venetian.please.peace.fado.happy.danger.art</string>
 	<string name = "title">TypeSpeed</string>
