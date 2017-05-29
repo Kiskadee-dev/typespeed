@@ -130,6 +130,8 @@ public class WordCreator : MonoBehaviour {
 		instancia.AddComponent<Move> ().speed = speed;
 		instancia.AddComponent<TextMesh> ().text = word.ToLower();
 		instancia.GetComponent<TextMesh> ().characterSize = 8;
+		instancia.GetComponent<TextMesh>().fontSize = 90;
+		instancia.transform.localScale = new Vector3 (0.1f, 0.1f, 1);
 		instancia.GetComponent<TextMesh> ().anchor = TextAnchor.MiddleCenter;
 		instancia.GetComponent<TextMesh> ().alignment = TextAlignment.Center;
 		instancia.AddComponent<MeshCollider> ();
